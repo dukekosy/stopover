@@ -31,10 +31,10 @@ class HotelsServiceTest {
 
   @Test
   void getAirportHotelsNearby() throws ResponseException {
-    LocalDate now = LocalDate.now();
+    LocalDate checkinDate = LocalDate.of(2020, 9, 20);
 
     Set<AirportHotels> airportHotels =
-        hotelsService.getAirportHotelsNearby(locationID, now, now.plusDays(1));
+        hotelsService.getAirportHotelsNearby(locationID, checkinDate, checkinDate.plusDays(1));
     assertTrue(airportHotels.size() != 0);
   }
 }

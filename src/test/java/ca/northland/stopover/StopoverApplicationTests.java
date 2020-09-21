@@ -39,7 +39,7 @@ class StopoverApplicationTests {
     String url = "http://localhost:";
     URI uri =
         UriComponentsBuilder.fromHttpUrl(url)
-            .path("/hotels/airports")
+            .path("/airport/hotels")
             .port(this.port)
             .queryParam("cityCode", "MUC")
             .queryParam("checkInDate", "20.09.2020")

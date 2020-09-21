@@ -15,12 +15,12 @@ import java.time.LocalDate;
 import java.util.Set;
 
 @Controller
-@RequestMapping(value = {"/hotels"})
+@RequestMapping(value = {"/airport"})
 class HotelsController {
 
   @Autowired private HotelsService hotelsService;
 
-  @GetMapping("/airports")
+  @GetMapping("/hotels")
   @ResponseBody
   public Set<AirportHotels> getAirportHotelsNearby(
       @RequestParam(name = "cityCode") String cityCode,

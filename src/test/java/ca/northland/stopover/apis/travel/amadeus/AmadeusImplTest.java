@@ -43,9 +43,9 @@ class AmadeusImplTest {
 
   @Test
   void searchHotels() {
-    LocalDate now = LocalDate.now();
+    LocalDate checkinDate = LocalDate.of(2020, 9, 20);
     try {
-      HotelOffer[] hotelOffers = travelApi.searchHotels(longitude, latitude, now, now.plusDays(1));
+      HotelOffer[] hotelOffers = travelApi.searchHotels(longitude, latitude, checkinDate, checkinDate.plusDays(1));
       assertTrue(hotelOffers.length != 0);
     } catch (ResponseException e) {
       e.printStackTrace();
