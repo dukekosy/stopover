@@ -17,11 +17,6 @@ import java.util.Set;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
-/**
- * Basic integration tests for service demo application.
- *
- * @author Dave Syer
- */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource(properties = {"management.port=0"})
 class StopoverApplicationTests {
