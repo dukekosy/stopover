@@ -13,6 +13,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.time.LocalDate;
 import java.util.Set;
 
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -36,5 +37,16 @@ class HotelsServiceTest {
     Set<AirportHotels> airportHotels =
         hotelsService.getAirportHotelsNearby(locationID, checkinDate, checkinDate.plusDays(1));
     assertTrue(airportHotels.size() != 0);
+  }
+
+  @Test
+  void getAirportHotelsNearby_invalidLocation() throws ResponseException {
+    LocalDate checkinDate = LocalDate.of(2020, 9, 20);
+
+    assertThrows(
+        ResponseException.class,
+        () -> {
+          hotelsService.getAirportHotelsNearby("ABCDE", checkinDate, checkinDate.plusDays(1));
+        });
   }
 }
