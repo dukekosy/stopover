@@ -20,7 +20,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource(properties = {"management.port=0"})
 class StopoverApplicationTests {
-
+// comment
   @LocalServerPort private int port;
 
   @Value("${local.management.port}")
